@@ -1,0 +1,25 @@
+#songs {
+    display: flex;
+    margin: 1in;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#song {
+    flex-direction: column;
+    text-align: center;
+}
+
+#section {
+    flex-direction: row;
+}
+
+#header {
+    text-align: center;
+    margin-top: 1in;
+}
+
+#addSong {
+    display: flex;
+    justify-content: center;
+    margin-top: 1in;
+}
