@@ -41,16 +41,18 @@ export const HappySongsList = () => {
     }
 
 
+
     return (
         <>
-            <h1>Happy</h1>
+            <h1 id="header">Happy</h1>
             {
                 songs.map(
                     (happySong) => {
-                        if(happySong.emotion.name === "happy") {
+                        if (happySong.emotion.id === 2) {
                             return <div key={`happy--${happySong.id}`}>
-                                    {happySong.title} {" "}
-                                    <button onClick={favoriteSongs} value={happySong.id}>Favorite</button>
+                                {happySong.artist} <br />
+                                {happySong.title} <br />
+                                <button onClick={favoriteSongs} value={happySong.id}>Favorite</button>
                             </div>
                         }
                     }

@@ -45,24 +45,18 @@ export const SadSongsList = () => {
     return (
         <>
             <h1 id="header">Sad n' Slow</h1>
-            <div id="addSong">
+            {/* <div id="addSong">
                 <button onClick={() => history.push("/sadSongs/create")}>Add a song</button>
-            </div>
+            </div> */}
             {
                 songs.map(
                     (sadSong) => {
-                        if (sadSong.emotion.name === "sad n' slow") {
-                            return <section key={`sad--${sadSong.id}`} id="section">
-                                <div id="songs">
-                                    <p id="song">
-                                        {sadSong.artist} <br />                                        
-                                    
-                                        {sadSong.title} <br />
-                                    
-                                        <button onClick={favoriteSongs} value={sadSong.id}>Favorite</button>
-                                    </p>
-                                </div>
-                            </section>
+                        if (sadSong.emotion.id === 1) {
+                            return <div key={`sad--${sadSong.id}`}>
+                                {sadSong.artist} <br />
+                                {sadSong.title} <br />
+                                <button onClick={favoriteSongs} value={sadSong.id}>Favorite</button>
+                            </div>
                         }
                     }
                 )
