@@ -1,10 +1,19 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    text-decoration: none;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+    border: 1px solid #6e886b;
+    background-color: #6e886b;
+    margin: 25px;
+    text-align: center;
+    color: #ffb887;
+}
+
+Link {
+    text-decoration: none;
 }

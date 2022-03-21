@@ -41,22 +41,24 @@ export const SadSongsList = () => {
             })
     }
 
-
     return (
         <>
-            <h1 id="header">Sad n' Slow</h1>
+            <h1 className="sadHeader">Sad n' Slow</h1>
             {/* <div id="addSong">
                 <button onClick={() => history.push("/sadSongs/create")}>Add a song</button>
             </div> */}
+
             {
                 songs.map(
                     (sadSong) => {
                         if (sadSong.emotion.id === 1) {
-                            return <div key={`sad--${sadSong.id}`}>
-                                {sadSong.artist} <br />
-                                {sadSong.title} <br />
-                                <button onClick={favoriteSongs} value={sadSong.id}>Favorite</button>
-                            </div>
+                            return (
+                                <div key={`sad--${sadSong.id}`} className="sadSongs">
+                                    {sadSong.artist} <br />
+                                    {sadSong.title} <br />
+                                    <button onClick={favoriteSongs} value={sadSong.id} className="sadButton">Favorite</button>
+                                </div>
+                            )
                         }
                     }
                 )

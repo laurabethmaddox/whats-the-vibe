@@ -1,4 +1,4 @@
-.sadSongs {
+.happySongs {
     border: 1px solid #6e886b;
     margin: 7px;
     padding: 7px;
@@ -11,7 +11,7 @@
     align-content: center;
 }
 
-.sadButton {
+.happyButton {
     border-color: #6e886b;
     color: #ffb887;
     background-color: #6e886b;
@@ -19,7 +19,7 @@
     font-weight: bold;
 }
 
-.sadHeader {
+.happyHeader {
     text-align: center;
     color: #6e886b;
 }

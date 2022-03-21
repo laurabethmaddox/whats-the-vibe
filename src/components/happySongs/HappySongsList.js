@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import "./HappySongs.css"
 
 export const HappySongsList = () => {
     const [songs, setSongs] = useState([])
@@ -44,15 +45,15 @@ export const HappySongsList = () => {
 
     return (
         <>
-            <h1 id="header">Happy</h1>
+            <h1 className="happyHeader">Happy</h1>
             {
                 songs.map(
                     (happySong) => {
                         if (happySong.emotion.id === 2) {
-                            return <div key={`happy--${happySong.id}`}>
+                            return <div key={`happy--${happySong.id}`} className="happySongs">
                                 {happySong.artist} <br />
                                 {happySong.title} <br />
-                                <button onClick={favoriteSongs} value={happySong.id}>Favorite</button>
+                                <button onClick={favoriteSongs} value={happySong.id} className="happyButton">Favorite</button>
                             </div>
                         }
                     }

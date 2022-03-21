@@ -4,7 +4,7 @@ import { ApplicationViews } from "./ApplicationViews";
 import { NavBar } from "./nav/NavBar";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
-import "./Vibes.css"
+import "./Vibes.scss"
 
 export const Vibes = () => (
     <>
@@ -15,6 +15,7 @@ export const Vibes = () => (
                 <>
                 <NavBar />
                 <ApplicationViews />
+                {/* <HomePage /> */}
             </>
             );
         } else {

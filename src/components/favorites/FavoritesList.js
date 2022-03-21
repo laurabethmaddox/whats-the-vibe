@@ -1,6 +1,6 @@
-import { dialogTitleClasses } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import "./Favorites.css"
 
 export const FavoritesList = () => {
     const [favorites, setFavorites] = useState([])
@@ -34,20 +34,20 @@ export const FavoritesList = () => {
 
     return (
         <>
-            <h1>Favorites</h1>
-            <div id="addSong">
-                <button onClick={() => history.push("/favorites/create")}>Add a song</button>
+            <h1 className="favoriteHeader">Favorites</h1>
+            <div className="addButton">
+                <button onClick={() => history.push("/favorites/create")} className="addButton">Add a song</button>
             </div>
             {
                 favorites.map(
                     (favorite) => {
-                        return <div key={`favorite--${favorite.id}`}>
+                        return <div key={`favorite--${favorite.id}`} className="favorites">
                             <p>
                                 {favorite.songList.artist} <br />
                                 {favorite.songList.title} <br />
                                 <button onClick={() => {
                                     deleteFavorite(favorite.id)
-                                }}>Delete</button>
+                                }} className="favoriteButton">Delete</button>
                             </p>
                         </div>
                     }
