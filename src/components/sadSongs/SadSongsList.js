@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./SadSongs.css"
+
 
 export const SadSongsList = () => {
     const [songs, setSongs] = useState([])
@@ -18,6 +21,7 @@ export const SadSongsList = () => {
         },
         []
     )
+
 
     const favoriteSongs = (evt) => {
         evt.preventDefault()
@@ -41,23 +45,21 @@ export const SadSongsList = () => {
             })
     }
 
+
     return (
         <>
             <h1 className="sadHeader">Sad n' Slow</h1>
-            {/* <div id="addSong">
-                <button onClick={() => history.push("/sadSongs/create")}>Add a song</button>
-            </div> */}
-
             {
                 songs.map(
                     (sadSong) => {
                         if (sadSong.emotion.id === 1) {
                             return (
-                                <div key={`sad--${sadSong.id}`} className="sadSongs">
-                                    {sadSong.artist} <br />
-                                    {sadSong.title} <br />
-                                    <button onClick={favoriteSongs} value={sadSong.id} className="sadButton">Favorite</button>
-                                </div>
+                                    <div key={`sad--${sadSong.id}`} className="sadSongs">
+                                        {sadSong.artist} <br />
+                                        {sadSong.title} <br />
+                                        <button onClick={favoriteSongs} value={sadSong.id} className="sadButton">Favorite</button>
+                                        <a href={sadSong.songLink} target="_blank">Listen Here</a>
+                                    </div>
                             )
                         }
                     }

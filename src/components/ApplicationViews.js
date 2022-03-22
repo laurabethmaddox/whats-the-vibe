@@ -10,7 +10,7 @@ import { SadSongsList } from "./sadSongs/SadSongsList"
 export const ApplicationViews = () => {
     return (
         <>
-            <Route exact path="/#">
+            <Route exact path="/">
                 <HomePage />
             </Route>
             <Route exact path="/sadSongs">

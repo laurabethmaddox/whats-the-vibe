@@ -12,7 +12,8 @@ export const FavoriteForm = () => {
             artist: song.artist,
             title: song.title,
             emotionId: song.emotionId,
-            usersId: parseInt(localStorage.getItem("vibes_user"))
+            usersId: parseInt(localStorage.getItem("vibes_user")),
+            songLink: song.songLink
         }
 
         const fetchOption = {
@@ -61,6 +62,22 @@ export const FavoriteForm = () => {
                             (evt) => {
                                 const copy = {...song}
                                 copy.title = evt.target.value
+                                updateSong(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="link">Link</label>
+                    <input
+                        type="link" id="link"
+                        className="form-control"
+                        placeholder="song link"
+                        onChange={
+                            (evt) => {
+                                const copy = {...song}
+                                copy.songLink = evt.target.value
                                 updateSong(copy)
                             }
                         } />

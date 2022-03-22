@@ -48,6 +48,7 @@ export const FavoritesList = () => {
                                 <button onClick={() => {
                                     deleteFavorite(favorite.id)
                                 }} className="favoriteButton">Delete</button>
+                                <a href={favorite.songList.songLink} target="_blank">Listen Here</a>
                             </p>
                         </div>
                     }

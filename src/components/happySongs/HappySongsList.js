@@ -54,6 +54,7 @@ export const HappySongsList = () => {
                                 {happySong.artist} <br />
                                 {happySong.title} <br />
                                 <button onClick={favoriteSongs} value={happySong.id} className="happyButton">Favorite</button>
+                                <a href={happySong.songLink} target="_blank">Listen Here</a>
                             </div>
                         }
                     }
