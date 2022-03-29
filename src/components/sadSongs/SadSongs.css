@@ -1,25 +1,47 @@
 .sadSongs {
-    border: 1px solid #6e886b;
-    margin: 7px;
-    padding: 7px;
-    background-color: #6e886b;
-    color: #ffb887;
-    width: 170px;
-    height: 100px;
-    text-align: center;
-    align-items: center;
-    align-content: center;
+    color: white;
+    display: inline-block;
 }
 
-.sadButton {
-    border-color: #6e886b;
-    color: #ffb887;
-    background-color: #6e886b;
-    width: 130px;
-    font-weight: bold;
+.sadSongList {
+    position: relative;
+    text-align: center;
+    margin: 13px;
+    margin-left: 14px;
+    border: 5px solid #809d87;
+    padding-bottom: 1px;;
+}
+
+.sadFavButton {
+    border-color: #809d87;
+    width: 25px;
+    height: 25px;
 }
 
 .sadHeader {
     text-align: center;
-    color: #6e886b;
+    color: white;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+
+}
+
+.sadDropdown {
+    color: white;
+    text-align: center;
+    margin-bottom: 7px;
+}
+
+.buttons-sad {
+    display: inline-block;
 }

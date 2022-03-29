@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "./Form.css"
+import { Icon } from "@iconify/react";
 
 export const FavoriteForm = () => {
     const [song, updateSong] = useState([])
@@ -13,7 +15,8 @@ export const FavoriteForm = () => {
             title: song.title,
             emotionId: song.emotionId,
             usersId: parseInt(localStorage.getItem("vibes_user")),
-            songLink: song.songLink
+            songLink: song.songLink,
+            img: song.img
         }
 
         const fetchOption = {
@@ -69,7 +72,12 @@ export const FavoriteForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="link">Link</label>
+                    <label htmlFor="link">
+                        Link {" "}
+                        <a href="https://open.spotify.com/" target="_blank">
+                            <Icon icon="mdi:spotify" width="25" height="25" />
+                        </a>
+                    </label>
                     <input
                         type="link" id="link"
                         className="form-control"
@@ -84,6 +92,27 @@ export const FavoriteForm = () => {
                 </div>
             </fieldset>
             <fieldset>
+                <div className="form-group">
+                    <label htmlFor="img">
+                        Photo {" "}
+                        <a href="https://www.google.com/imghp?hl=en&tab=ri&authuser=0&ogbl" target="_blank">
+                            <Icon icon="ic:baseline-add-photo-alternate" width="25" height="25"/>
+                        </a>
+                    </label>
+                    <input
+                        type="img" id="img"
+                        className="form-control"
+                        placeholder="img url"
+                        onChange={
+                            (evt) => {
+                                const copy = {...song}
+                                copy.img = evt.target.value
+                                updateSong(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
+            <fieldset className="form-5">
                 <div className="form-group">
                     <p>What kind of vibe is it?</p>
                     <label htmlFor="sadSongs">Sad</label>
@@ -111,7 +140,7 @@ export const FavoriteForm = () => {
                 </div>
             </fieldset>
             <button className="btn btn-primary" onClick={saveSong}>
-                Submit
+                SUBMIT
             </button>
         </form>
     )

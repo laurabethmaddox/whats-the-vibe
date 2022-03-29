@@ -15,7 +15,6 @@ export const Vibes = () => (
                 <>
                 <NavBar />
                 <ApplicationViews />
-                {/* <HomePage /> */}
             </>
             );
         } else {

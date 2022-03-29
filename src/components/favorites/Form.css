@@ -1,0 +1,22 @@
+.songForm__title {
+    text-align: center;
+    color: white;
+    margin-top: 7px;
+}
+
+.form-group {
+    color: white;
+    margin: 7px;
+}
+
+.btn-primary {
+    color: white;
+    margin-left: 7px;
+    font-weight: bold;
+}
+
+.form-5 {
+    border: 1px solid white;
+    width: 190px;
+    margin: 7px;
+}

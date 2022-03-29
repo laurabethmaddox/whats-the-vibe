@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "./SadSongs.css"
-
+import { Icon } from "@iconify/react";
 
 export const SadSongsList = () => {
     const [songs, setSongs] = useState([])
@@ -18,13 +16,11 @@ export const SadSongsList = () => {
                         setSongs(songsArray)
                     }
                 )
-        },
-        []
+            },
+            []
     )
 
-
     const favoriteSongs = (evt) => {
-        evt.preventDefault()
 
         const newFavorite = {
             songListId: parseInt(evt.target.value),
@@ -48,23 +44,31 @@ export const SadSongsList = () => {
 
     return (
         <>
-            <h1 className="sadHeader">Sad n' Slow</h1>
-            {
-                songs.map(
-                    (sadSong) => {
-                        if (sadSong.emotion.id === 1) {
-                            return (
-                                    <div key={`sad--${sadSong.id}`} className="sadSongs">
-                                        {sadSong.artist} <br />
-                                        {sadSong.title} <br />
-                                        <button onClick={favoriteSongs} value={sadSong.id} className="sadButton">Favorite</button>
-                                        <a href={sadSong.songLink} target="_blank">Listen Here</a>
-                                    </div>
-                            )
+            <h1 className="sadHeader">What kind of sad n' slow are we feeling today?</h1>
+            {/* <p className="sadDropdown">Dropdown</p> */}
+                {
+                    songs.map(
+                        (sadSong) => {
+                            if (sadSong.emotion.id === 1) {
+                                return (
+                                        <div key={`sad--${sadSong.id}`} className="sadSongs">
+                                            <p className="sadSongList">
+                                                <img src={sadSong.img} /> <br />
+                                                <a href={sadSong.songLink} target="_blank" className="link">
+                                                    <Icon icon="mdi:spotify" width="21" height="21"/>
+                                                </a> <br />
+                                                {sadSong.artist} <br />
+                                                {sadSong.title} <br />
+                                                <button onClick={favoriteSongs} value={sadSong.id}  className="sadFavButton">
+                                                    🖤
+                                                </button> 
+                                            </p>
+                                        </div>
+                                )
+                            }
                         }
-                    }
-                )
-            }
+                    )
+                }
         </>
     )
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import "./Favorites.css"
+import { Icon } from "@iconify/react";
+import { IconButton } from "@mui/material";
+import { DeleteOutlined } from "@mui/icons-material";
 
 export const FavoritesList = () => {
     const [favorites, setFavorites] = useState([])
@@ -36,19 +39,20 @@ export const FavoritesList = () => {
         <>
             <h1 className="favoriteHeader">Favorites</h1>
             <div className="addButton">
-                <button onClick={() => history.push("/favorites/create")} className="addButton">Add a song</button>
+                <button onClick={() => history.push("/favorites/create")} className="addButton">➕</button>
             </div>
             {
                 favorites.map(
                     (favorite) => {
                         return <div key={`favorite--${favorite.id}`} className="favorites">
-                            <p>
+                            <p className="songList">
+                                <img src={favorite.songList.img} /> <br />
                                 {favorite.songList.artist} <br />
                                 {favorite.songList.title} <br />
-                                <button onClick={() => {
-                                    deleteFavorite(favorite.id)
-                                }} className="favoriteButton">Delete</button>
-                                <a href={favorite.songList.songLink} target="_blank">Listen Here</a>
+                                <a href={favorite.songList.songLink} target="_blank" className="spotify-link">
+                                    <Icon icon="mdi:spotify" width="21" height="21"/>
+                                </a> 
+                                <IconButton onClick={() => {deleteFavorite(favorite.id) }} className="favoriteButton"> <DeleteOutlined /> </IconButton>
                             </p>
                         </div>
                     }

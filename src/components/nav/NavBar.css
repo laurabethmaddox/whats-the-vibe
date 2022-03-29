@@ -2,18 +2,22 @@
     display: flex;
     flex-wrap: nowrap;
     text-decoration: none;
+    border: 1px solid white;
+    background-color: white;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
-    border: 1px solid #6e886b;
-    background-color: #6e886b;
     margin: 25px;
     text-align: center;
-    color: #ffb887;
 }
 
-Link {
+.navbar__link {
     text-decoration: none;
+    color: #809d87;
+    font-weight: bold;
+    font-size: 17px;
 }
+
+

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom"
 import "./HappySongs.css"
+import { Icon } from "@iconify/react";
+
 
 export const HappySongsList = () => {
     const [songs, setSongs] = useState([])
@@ -46,15 +48,23 @@ export const HappySongsList = () => {
     return (
         <>
             <h1 className="happyHeader">Happy</h1>
+            {/* <p className="happyDropdown">Dropdown</p> */}
             {
                 songs.map(
                     (happySong) => {
                         if (happySong.emotion.id === 2) {
                             return <div key={`happy--${happySong.id}`} className="happySongs">
-                                {happySong.artist} <br />
-                                {happySong.title} <br />
-                                <button onClick={favoriteSongs} value={happySong.id} className="happyButton">Favorite</button>
-                                <a href={happySong.songLink} target="_blank">Listen Here</a>
+                                <p className="happySongList">
+                                    <img src={happySong.img} /> <br />
+                                    <a href={happySong.songLink} target="_blank" className="happyLink">
+                                        <Icon icon="mdi:spotify" width="25" height="25"/>
+                                    </a> <br />
+                                    {happySong.artist} <br />
+                                    {happySong.title} <br />
+                                    <button onClick={favoriteSongs} value={happySong.id} className="happyButton">
+                                        🖤
+                                    </button> 
+                                </p>
                             </div>
                         }
                     }
