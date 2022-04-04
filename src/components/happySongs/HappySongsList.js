@@ -48,7 +48,6 @@ export const HappySongsList = () => {
     return (
         <>
             <h1 className="happyHeader">Happy</h1>
-            {/* <p className="happyDropdown">Dropdown</p> */}
             {
                 songs.map(
                     (happySong) => {
