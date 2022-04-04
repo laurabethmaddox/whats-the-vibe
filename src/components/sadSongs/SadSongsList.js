@@ -45,7 +45,6 @@ export const SadSongsList = () => {
     return (
         <>
             <h1 className="sadHeader">What kind of sad n' slow are we feeling today?</h1>
-            {/* <p className="sadDropdown">Dropdown</p> */}
                 {
                     songs.map(
                         (sadSong) => {

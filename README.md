@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Front End Capstone: What's The Vibe?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my front-end capstone project for Nashville Software School. The app allows the user to find and listen to songs based on a certain mood. It also allows for the user to favorite songs to their personal favorites and also add songs to either mood for other users to see and/or listen to.
 
-## Available Scripts
+# Features
 
-In the project directory, you can run:
+This app allows users to find, listen, and upload songs based on a mood. <br />
+Features include:
+* A happy, sad, and favorites pages
+* The happy and sad pages show the user songs that generally go with that mood
+* A favorite button on each song to favorite them and have them show up on the favorites page.
+* A Spotify logo button on each song to send the user to Spotify so they can listen to it
+* An add song button on the favorites page allowing you to add a song to either the happy or sad pages.
 
-### `npm start`
+# Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. First, you'll need to clone the project to your machine:
+```
+$ git clone git@github.com:laurabethmaddox/whats-the-vibe.git
+```
+2. Cd into the directory
+```
+cd whats-the-vibe
+```
+3. Next, run this in your terminal:
+```
+npm install
+npm start
+```
+4. In order for the application to run as it's intended to you will need to open up a new tab in your terminal and run: 
+```
+cd
+cd workspace
+cd whats-the-vibe
+cd api
+json-server -p 8088 database.json
+```
